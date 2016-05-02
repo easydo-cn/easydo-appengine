@@ -55,10 +55,6 @@ the python app engine under easydo.cn
     ['members', 'packages', 'files', 'tasks']
     >>> root['tasks'].object_types
     ['DataContainer', 'Container']
-    >>> root['tasks'].add_dataitem('001', data={'title':'fix some bug', description='bug description'})
-    >>> task = root['tasks']['001']
-    >>> task.object_types
-    ['DataItem', 'Item']
     
 ### 成员管理
 
@@ -82,8 +78,15 @@ the python app engine under easydo.cn
     form = ui.form(form_obj).button('save', 'Save').on('submit', submit_url)
     return form.html()
 
+### 表单
+
 得到软件包中的流程定义，执行流程:
 
     workflow_obj = root.pakcages.get_workflow_obj('zopen.tasks:task')
     task.workitems.start('zopen.tasks:task')
-    
+
+    >>> root['tasks'].add_dataitem('001', data={'title':'fix some bug', description='bug description'})
+    >>> task = root['tasks']['001']
+    >>> task.object_types
+    ['DataItem', 'Item']
+
