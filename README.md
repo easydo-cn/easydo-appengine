@@ -85,5 +85,5 @@ the python app engine under easydo.cn
 得到软件包中的流程定义，执行流程:
 
     workflow_obj = root.pakcages.get_workflow_obj('zopen.tasks:task')
-    task.workitems
+    task.workitems.start('zopen.tasks:task')
     
